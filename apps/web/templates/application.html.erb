@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Web</title>
+    <title>Hanami Bookshelf</title>
     <%= favicon %>
     <%= vite_client %>
     <%= vite_javascript 'application' %>
 
   </head>
   <body>
+    <%= navbar %>
+    <div class="container mx-auto px-4">
     <%= yield %>
+    </div>
   </body>
 </html>
