@@ -231,7 +231,6 @@ module Web
         style-src 'self' 'unsafe-inline' https:;
         font-src 'self';
         object-src 'none';
-        plugin-types application/pdf;
         child-src 'self';
         frame-src 'self';
         media-src 'self'
@@ -257,6 +256,7 @@ module Web
       view.prepare do
         include Hanami::Helpers
         include Web::Assets::Helpers
+        include ViteHanami::TagHelpers
       end
     end
 
@@ -264,6 +264,13 @@ module Web
     # DEVELOPMENT
     #
     configure :development do
+      # Allow @vite/client to hot reload changes in development
+      security.content_security_policy(
+        security.content_security_policy
+          .sub('script-src', "script-src 'unsafe-eval' 'unsafe-inline'")
+          .sub('connect-src', "connect-src ws://#{ ViteRuby.config.host_with_port }")
+      )
+
       # Don't handle exceptions, render the stack trace
       handle_exceptions false
     end

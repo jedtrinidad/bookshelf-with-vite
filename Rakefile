@@ -7,3 +7,6 @@ begin
   task default: :spec
 rescue LoadError
 end
+require 'vite_hanami'
+ViteRuby.install_tasks
+

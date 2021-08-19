@@ -35,6 +35,7 @@ Hanami.configure do
   end
 
   environment :development do
+    middleware.use(ViteRuby::DevServerProxy, ssl_verify_none: true) if ViteRuby.run_proxy?
     # See: https://guides.hanamirb.org/projects/logging
     logger level: :debug
   end
