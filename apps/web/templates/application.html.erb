@@ -7,10 +7,10 @@
     <%= vite_javascript 'application' %>
 
   </head>
-  <body>
+  <body class="bg-warm-gray-200">
     <%= navbar %>
-    <div class="container mx-auto py-2">
+    <main class="md:container md:mx-auto py-2">
     <%= yield %>
-    </div>
+    </main>
   </body>
 </html>

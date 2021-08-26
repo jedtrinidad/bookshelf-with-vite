@@ -14,7 +14,7 @@ module Web
       end
 
       def navbar
-        html.nav(class: 'flex justify-left p-3 bg-red-500') do
+        html.nav(class: 'flex justify-left bg-red-500 md:rounded-md md:mt-5 md:mx-5') do
           title_link + 
             link_to('About', '/about', class: TITLE_BAR_LINK_CLASS) +
             link_to('Books', '/books', class: TITLE_BAR_LINK_CLASS)
