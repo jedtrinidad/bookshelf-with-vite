@@ -22,6 +22,12 @@ How to run the development server:
 % bundle exec hanami server
 ```
 
+How to run the vite development server
+
+```
+% bin/vite dev
+```
+
 How to prepare (create and migrate) DB for `development` and `test` environments:
 
 ```
